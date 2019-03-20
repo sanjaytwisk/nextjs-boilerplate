@@ -1,0 +1,23 @@
+{
+  "extends": ["esnext", "react", "prettier"],
+  "plugins": ["import", "jest", "enzyme"],
+  "env": {
+    "jest/globals": true
+  },
+
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "react/react-in-jsx-scope": 0,
+    "import/no-namespace": 0,
+    "import/namespace": 0,
+    "import/prefer-default-export": 0,
+    "react/prop-types": 1
+  }
+}

@@ -6,10 +6,9 @@ An opinionated boilerplate to kickstart projects using NextJS
 
 - 👏🏼 Next 8
 - 🌊 Custom server, Document and App
-- ⌨️ Type safety using TypeScript in strict mode
 - 💄 Write SCSS & future CSS with PostCSS + preset-env
 - 🖊 SVG sprite for icons
-- 👀 Lint your code with TSLint & Stylelint
+- 👀 Lint your code with ESLint & Stylelint
 - 🌈 Prettier for consistent code style
 - 🔨 Jest + Enzyme for tests
 - ☝️ Husy + lint-staged for code quality assurance
@@ -62,8 +61,7 @@ The boilerplate provides a couple of linters to help you keep an eye on code con
 
 ```sh
 $ npm run lint:css
-$ npm run lint:ts
-$ npm run lint:types
+$ npm run lint:js
 ```
 
 TIP: To get the most out of your linters install the corresponding (Stylelint, TSLint) plugins for your editor or IDE
@@ -92,20 +90,20 @@ $ npm run test:dev
 
 ## Modules
 
-### TypeScript
+### JavaScript
 
-TypeScript and Babel are pre-configured with custom module resolvers.
+Babel is pre-configured with custom module resolvers.
 This means you can use absolute imports with custom namespaces by default for the following modules:
 
 ```js
 /* import common library */
-import lib from '@common/<folder>/<lib>'
+import lib from 'common/<folder>/<lib>'
 /* import component */
-import Counter from '@components/counter/Counter'
+import Counter from 'components/counter/Counter'
 /* import container */
-import HomepageCounter from '@containers/counter/HomepageCounter'
+import HomepageCounter from 'containers/counter/HomepageCounter'
 /* import store files */
-import { CounterAction } from '@store/counter/counterActions'
+import { CounterAction } from 'store/counter/counterActions'
 ```
 
 ### SCSS

@@ -1,8 +1,4 @@
-import { CounterAction, CounterActionTypes } from './counterActions'
-
-export interface CounterState {
-  readonly count: number
-}
+import { COUNTER_INCREMENT, COUNTER_DECREMENT } from './counterActions'
 
 const initialCounterState = {
   count: 0,
@@ -11,18 +7,15 @@ const initialCounterState = {
 /**
  * Counter Reducer
  */
-export default (
-  state: CounterState = initialCounterState,
-  action: CounterAction
-) => {
+export default (state = initialCounterState, action) => {
   const { count } = state
   switch (action.type) {
-    case CounterActionTypes.INCREMENT:
+    case COUNTER_INCREMENT:
       return {
         ...state,
         count: count + 1,
       }
-    case CounterActionTypes.DECREMENT:
+    case COUNTER_DECREMENT:
       return {
         ...state,
         count: count > 0 ? count - 1 : 0,

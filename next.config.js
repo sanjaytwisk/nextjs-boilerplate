@@ -6,10 +6,8 @@ const {
 const getBuildConfig = (...args) => {
   const path = require('path')
   const withPugins = require('next-compose-plugins')
-  const withTypeScript = require('@zeit/next-typescript')
   const withSCSS = require('@zeit/next-sass')
   const postcssPresetEnv = require('postcss-preset-env')
-  const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
   const postcssPresetEnvOptions = {
     features: {
       'custom-media-queries': true,
@@ -28,9 +26,6 @@ const getBuildConfig = (...args) => {
 
   const nextConfig = {
     webpack(config, options) {
-      if (options.isServer) {
-        config.plugins.push(new ForkTsCheckerWebpackPlugin())
-      }
       config.module.rules.push({
         test: /\.svg$/,
         include: /src\/components\/icon\/icons/,
@@ -52,9 +47,7 @@ const getBuildConfig = (...args) => {
       return config
     },
   }
-  return withPugins([[withTypeScript], [withSCSS, cssOptions]], nextConfig)(
-    ...args
-  )
+  return withPugins([[withSCSS, cssOptions]], nextConfig)(...args)
 }
 
 module.exports = (phase, ...rest) => {

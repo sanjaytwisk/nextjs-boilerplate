@@ -4,11 +4,11 @@ module.exports = {
   setupFiles: ['<rootDir>/jest.setup.js'],
   testRegex: TEST_REGEX,
   transform: {
-    '^.+\\.tsx?$': 'babel-jest',
+    '^.+\\.jsx?$': 'babel-jest',
     '^.+\\.svg$': 'jest-svg-transformer',
   },
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+  moduleFileExtensions: ['js', 'jsx'],
   collectCoverage: false,
   moduleNameMapper: {
     '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',

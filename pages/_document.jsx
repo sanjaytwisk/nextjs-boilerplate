@@ -1,15 +1,8 @@
-import Document, {
-  Head,
-  Main,
-  NextScript,
-  NextDocumentContext,
-} from 'next/document'
-const sprite = require('svg-sprite-loader/runtime/sprite.build')
+import Document, { Head, Main, NextScript } from 'next/document'
+import sprite from 'svg-sprite-loader/runtime/sprite.build'
 
-export default class CustomDocument extends Document<{
-  spriteContent: string
-}> {
-  public static async getInitialProps(ctx: NextDocumentContext) {
+export default class CustomDocument extends Document {
+  static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
     const spriteContent = sprite.stringify()
 
@@ -19,7 +12,7 @@ export default class CustomDocument extends Document<{
     }
   }
 
-  public render() {
+  render() {
     return (
       <html>
         <Head>{/* your head if needed */}</Head>

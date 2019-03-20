@@ -1,12 +1,7 @@
-import Icon from '@components/icon/Icon'
+import Icon from 'components/icon/Icon'
+import PropTypes from 'prop-types'
 
-interface CounterProps {
-  count: number
-  add: () => void
-  remove: () => void
-}
-
-const Counter: React.SFC<CounterProps> = ({ count, add, remove }) => {
+const Counter = ({ count, add, remove }) => {
   const onAdd = () => add()
   const onRemove = () => remove()
   return (
@@ -20,6 +15,12 @@ const Counter: React.SFC<CounterProps> = ({ count, add, remove }) => {
       </button>
     </>
   )
+}
+
+Counter.propTypes = {
+  count: PropTypes.number.isRequired,
+  add: PropTypes.func.isRequired,
+  remove: PropTypes.func.isRequired,
 }
 
 export default Counter

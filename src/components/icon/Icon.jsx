@@ -1,20 +1,12 @@
-import * as React from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import * as icons from './icons'
 import './icon.scss'
-
-export type Icons = typeof icons
-export type IconName = keyof Icons
-export type IconSize = 'small' | 'medium' | 'large'
-
-interface IconProps {
-  name: IconName
-  size?: IconSize
-}
 
 /**
  * Icon
  */
-const Icon: React.SFC<IconProps> = ({ name, size = 'small' }) => {
+const Icon = ({ name, size = 'small' }) => {
   const { viewBox, id } = icons[name]
   return (
     <span className={`icon icon--${size}`}>
@@ -23,6 +15,11 @@ const Icon: React.SFC<IconProps> = ({ name, size = 'small' }) => {
       </svg>
     </span>
   )
+}
+
+Icon.propTypes = {
+  name: PropTypes.string.isRequired,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
 }
 
 export default Icon

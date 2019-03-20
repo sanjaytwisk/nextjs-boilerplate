@@ -1,34 +1,34 @@
 {
   "env": {
     "development": {
-      "presets": ["next/babel", "@zeit/next-typescript/babel"],
+      "presets": ["next/babel"],
       "plugins": [
         [
           "module-resolver",
           {
             "root": ["./"],
             "alias": {
-              "@components": "./src/components",
-              "@containers": "./src/containers",
-              "@common": "./src/common",
-              "@store": "./src/store"
+              "components": "./src/components",
+              "containers": "./src/containers",
+              "common": "./src/common",
+              "store": "./src/store"
             }
           }
         ]
       ]
     },
     "production": {
-      "presets": ["next/babel", "@zeit/next-typescript/babel"],
+      "presets": ["next/babel"],
       "plugins": [
         [
           "module-resolver",
           {
             "root": ["./"],
             "alias": {
-              "@components": "./src/components",
-              "@containers": "./src/containers",
-              "@common": "./src/common",
-              "@store": "./src/store"
+              "components": "./src/components",
+              "containers": "./src/containers",
+              "common": "./src/common",
+              "store": "./src/store"
             }
           }
         ]
@@ -43,8 +43,7 @@
               "modules": "commonjs"
             }
           }
-        ],
-        "@zeit/next-typescript/babel"
+        ]
       ],
       "plugins": [
         [
@@ -52,10 +51,10 @@
           {
             "root": ["./"],
             "alias": {
-              "@components": "./src/components",
-              "@containers": "./src/containers",
-              "@common": "./src/common",
-              "@store": "./src/store"
+              "components": "./src/components",
+              "containers": "./src/containers",
+              "common": "./src/common",
+              "store": "./src/store"
             }
           }
         ]
