@@ -20,6 +20,7 @@
       ]
     },
     "scss/at-rule-no-unknown": true,
-    "scss/media-feature-value-dollar-variable": "always"
+    "scss/media-feature-value-dollar-variable": "always",
+    "scss/at-extend-no-missing-placeholder": true
   }
 }
