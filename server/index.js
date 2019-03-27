@@ -12,7 +12,7 @@ const startApp = async () => {
   createServer((req, res) =>
     handle(req, res, parse(req.url || '', true))
   ).listen(port, () => {
-    console.log(`> Ready on http://localhost:${port}`) // tslint:disable-line
+    console.log(`> Ready on http://localhost:${port}`) // eslint-disable-line
   })
 }
 

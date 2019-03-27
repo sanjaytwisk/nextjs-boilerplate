@@ -11,7 +11,7 @@
     "dev": "nodemon server/index.js",
     "export": "npm run build && next export",
     "prettier": "prettier --write **/*.{js,jsx}",
-    "lint:js": "npm run prettier && eslint --fix --ext .jsx --ext .js src pages",
+    "lint:js": "npm run prettier && eslint --fix --ext .jsx --ext .js src pages server",
     "lint:css": "stylelint --fix {src,pages}/**/*.scss",
     "storybook": "start-storybook"
   },
@@ -24,7 +24,7 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "*.{js,jsx}": [
       "npm run lint:js",
       "git add"
     ],
